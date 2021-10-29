@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task mciSrcZip(type: Zip) {
+    from projectDir
+    include 'src/**/*'
+    include '*.gradle'
+    include 'gradlew'
+    include 'gradlew.bat'
+    include 'gradle/**/*'
+    archiveFileName = "Assignment.zip"
+}
